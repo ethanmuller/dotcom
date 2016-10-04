@@ -14,3 +14,6 @@ RUN gulp
 
 RUN rm -rf /usr/html
 RUN cp -R build /usr/html
+
+# Remove workspace to decrease image size
+RUN rm -rf /workspace
