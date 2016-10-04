@@ -1,0 +1,14 @@
+{
+  "name": "dotcom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ethan Muller <ethanbmuller@gmail.com> (http://ethanmuller.com)",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
