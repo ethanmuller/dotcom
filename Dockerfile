@@ -9,7 +9,7 @@ WORKDIR /workspace
 
 # Move over needed files
 ADD package.json .
-ADD src/ .
+ADD src/ src/
 ADD Gulpfile.js .
 
 # Install local node dependencies
