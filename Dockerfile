@@ -1,17 +1,24 @@
 FROM smebberson/alpine-nginx-nodejs:4.2.2
 
+# Install global node dependencies
 RUN npm install gulp -g
 
-RUN mkdir /src
-
+# Make an area to work in
+RUN mkdir /workspace
 WORKDIR /workspace
 
+# Move over needed files
 ADD package.json .
 ADD src/ src/
-RUN npm install
 ADD Gulpfile.js .
+
+# Install local node dependencies
+RUN npm install
+
+# Build!
 RUN gulp
 
+# Move built files into proper nginx directory
 RUN rm -rf /usr/html
 RUN cp -R build /usr/html
 
