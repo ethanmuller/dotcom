@@ -1,12 +1,6 @@
 @import 'shake.css';
-/*
 
-~~ Media Queries ~~
-
-squatty viewport:
-(min-aspect-ratio: 4/3) and (min-width: 40em) and (max-height: 37em)
-
-*/
+@custom-media --squatty-viewport (min-width: 40em) and (max-height: 39em);
 
 :root {
   /* --- Colors --- */
@@ -22,10 +16,11 @@ squatty viewport:
   --colLink:   #0079FF;
 
   /* --- Lengths --- */
-  --lenBorder: 3px;
-  --lenSm:     0.5em;
-  --lenMd:     1em;
-  --lenLg:     2em;
+  --lenBorder:  3px;
+  --lenSm:      0.5em;
+  --lenMd:      1em;
+  --lenLg:      2em;
+  --lenContent: 20em;
 
 }
 
@@ -51,14 +46,14 @@ body {
 }
 
 h1, h2 {
-  font-size: 1em;
-  margin: 0 0 1em;
+  font-size: var(--lenMd);
+  margin: 0 0 var(--lenMd);
   padding: 0;
 }
 
 p {
   padding: 0;
-  margin: 0 0 1em;
+  margin: 0 0 var(--lenMd);
 }
 
 ul {
@@ -74,7 +69,7 @@ a {
 
 svg {
   display: block;
-  margin-bottom: 2em;
+  margin-bottom: var(--lenLg);
 }
 
 .content {
@@ -84,16 +79,15 @@ svg {
   height: 100%;
 
   flex-direction: column;
-  max-width: 20em;
+  max-width: var(--lenContent);
 
-  padding: 2em;
+  padding: var(--lenLg);
 
   /* Put padding inside of element */
   box-sizing: border-box;
 }
 
-/* squatty viewport */
-@media (min-aspect-ratio: 4/3) and (min-width: 40em) and (max-height: 37em) {
+@media (--squatty-viewport) {
   .content {
     flex-direction: row;
     max-width: none;
@@ -102,15 +96,14 @@ svg {
 
 
 .content__a {
-  max-width: 20em;
+  max-width: var(--lenContent);
 }
 
 .content__b {
-  padding-top: 1em;
+  padding-top: var(--lenMd);
 }
 
-/* squatty viewport */
-@media (min-aspect-ratio: 4/3) and (min-width: 40em) and (max-height: 37em) {
+@media (--squatty-viewport) {
   .content__b {
     padding-top: 0;
     text-align: center;
@@ -123,8 +116,8 @@ svg {
 
   display: block;
 
-  padding: 1em;
-  margin-bottom: 0.5em;
+  padding: var(--lenMd);
+  margin-bottom: var(--lenSm);
 
   border: var(--lenBorder) solid;
 
