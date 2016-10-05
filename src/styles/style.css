@@ -1,0 +1,172 @@
+@import 'shake.css';
+/*
+
+~~ Media Queries ~~
+
+squatty viewport:
+(min-aspect-ratio: 4/3) and (min-width: 40em) and (max-height: 37em)
+
+*/
+
+:root {
+  /* --- Colors --- */
+  --colDark:   #444444;
+  --colLight:  #f9f9f9;
+
+  --colBlue:   #5894c3;
+  --colBrown:  #b57d77;
+  --colGreen:  #7d9774;
+  --colPurple: #9288b3;
+  --colPink:   #d889b4;
+
+  --colLink:   #0079FF;
+
+  /* --- Lengths --- */
+  --lenBorder: 3px;
+  --lenSm:     0.5em;
+  --lenMd:     1em;
+  --lenLg:     2em;
+
+}
+
+html {
+  /* used for full-height .container */
+  height: 100%;
+}
+
+body {
+  color: var(--colDark);
+  background: var(--colLight);
+
+  font: 1.125em/1.6 Courier, Monospace;
+
+  /* smoother fonts for webkit */
+  -webkit-font-smoothing: antialiased;
+
+  margin: 0;
+  padding: 0;
+
+  /* used for full-height .container */
+  height: 100%;
+}
+
+h1, h2 {
+  font-size: 1em;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+a {
+  color: var(--colLink);
+}
+
+svg {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+
+  height: 100%;
+
+  flex-direction: column;
+  max-width: 20em;
+
+  padding: 2em;
+
+  /* Put padding inside of element */
+  box-sizing: border-box;
+}
+
+/* squatty viewport */
+@media (min-aspect-ratio: 4/3) and (min-width: 40em) and (max-height: 37em) {
+  .content {
+    flex-direction: row;
+    max-width: none;
+  }
+}
+
+
+.content__a {
+  max-width: 20em;
+}
+
+.content__b {
+  padding-top: 1em;
+}
+
+/* squatty viewport */
+@media (min-aspect-ratio: 4/3) and (min-width: 40em) and (max-height: 37em) {
+  .content__b {
+    padding-top: 0;
+    text-align: center;
+  }
+}
+
+.btn {
+  /* Override link style */
+  text-decoration: none;
+
+  display: block;
+
+  padding: 1em;
+  margin-bottom: 0.5em;
+
+  border: var(--lenBorder) solid;
+
+  line-height: 0;
+}
+
+.btn--a {
+  color: var(--colBlue);
+  &:focus,
+  &:hover {
+    color: white;
+    background-color: var(--colBlue);
+    border-color: var(--colBlue);
+  }
+}
+
+.btn--b {
+  color: var(--colGreen);
+  &:focus,
+  &:hover {
+    color: white;
+    background-color: var(--colGreen);
+    border-color: var(--colGreen);
+  }
+}
+
+.btn--c {
+  color: var(--colPink);
+  &:focus,
+  &:hover {
+    color: white;
+    background-color: var(--colPink);
+    border-color: var(--colPink);
+  }
+}
+
+.btn--d {
+  color: var(--colBrown);
+  &:focus,
+  &:hover {
+    color: white;
+    background-color: var(--colBrown);
+    border-color: var(--colBrown);
+  }
+}
